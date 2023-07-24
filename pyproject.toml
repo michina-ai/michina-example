@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "michina-example"
+version = "0.1.0"
+description = "This is an example repo for testing with michina."
+authors = ["bkitano <briankitano@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pytest = "^7.4.0"
+requests = "^2.31.0"
+openai = "^0.27.8"
+langchain = "^0.0.240"
+python-dotenv = "^1.0.0"
+michina = { path = "../michina/", develop = true }
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
