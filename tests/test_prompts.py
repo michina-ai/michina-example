@@ -26,5 +26,5 @@ def test_respond_to_customer_fail():
     response_message = respond_to_customer(customer_message)
 
     tone_check = ToneCheck.check(response_message, "angry")
-    assert tone_check.judgment > 0.5
+    assert tone_check.judgment < 0.5
     
