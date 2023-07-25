@@ -1,7 +1,5 @@
-from unittest.mock import patch
 from src.prompts import check_for_political_content, respond_to_customer
-
-from michina import isConsistent, toneCheck
+from michina.checks import ToneCheck, ConsistencyCheck
 
 """
 This is a consistency check. It tests whether your prompt's output 
@@ -10,14 +8,14 @@ is consistent with the goal of the test itself.
 def test_check_for_political_content_consistent():
     message = "I want to buy a campaign poster for Obama."
     statement = check_for_political_content(message)
-    response = isConsistent(message, statement)
+    response = ConsistencyCheck.check(message, statement)
     assert response.judgment > 0.5
 
 def test_respond_to_customer():
     customer_message = "I want to buy a campaign poster for Obama."
     response_message = respond_to_customer(customer_message)
 
-    tone_check = toneCheck(response_message, "polite")
+    tone_check = ToneCheck.check(response_message, "polite")
     assert tone_check.judgment > 0.5
 
 def test_respond_to_customer_fail():
@@ -27,6 +25,6 @@ def test_respond_to_customer_fail():
     customer_message = "I want to buy a campaign poster for Obama."
     response_message = respond_to_customer(customer_message)
 
-    tone_check = toneCheck(response_message, "angry")
+    tone_check = ToneCheck.check(response_message, "angry")
     assert tone_check.judgment > 0.5
     
