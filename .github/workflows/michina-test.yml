@@ -26,11 +26,11 @@ jobs:
     - name: Install dependencies
       run: |
         poetry install
-    - name: Test with pytest
+    - name: Testing access of key
       env:  
         TEST_KEY: ${{ secrets.TEST_KEY }}
       run: |
-        echo $TEST_KEY
+        python3 -c "import os; print(os.environ['TEST_KEY'])"
     - name: Test with pytest
       run: |
         poetry run python -m pytest -s tests/
