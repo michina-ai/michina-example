@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "michina-example"
+name = "michina-github-actions-example"
 version = "0.1.0"
 description = "This is an example repo for testing with michina."
 authors = ["bkitano <briankitano@gmail.com>"]
