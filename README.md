@@ -9,3 +9,6 @@ The Michina Github action will run the test to make sure your new prompts pass c
 
 1. In your Github repository, under Settings>Security>Secrets and variables, add `OPENAI_API_KEY` as a Repository secret.
 2. Profit.
+
+## CircleCI integration
+1. In your CircleCI Project, under Project Settings>Environment Variables, Add `OPENAI_API_KEY` as an Environment Variable.
